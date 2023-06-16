@@ -1,0 +1,120 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es2021": true,
+    "node": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "sourceType": "module",
+    "ecmaVersion": "latest",
+    "jsx": true,
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "simple-import-sort"
+  ],
+  "extends": [
+    "airbnb",
+    "airbnb/hooks",
+    "airbnb-typescript",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking"
+  ],
+  "rules": {
+
+    // # React
+
+    "react/react-in-jsx-scope": 0,
+    "react/jsx-props-no-spreading": 0,
+    "react/prop-types": 0,
+    "react/jsx-max-props-per-line": 1,
+    "react/no-unknown-property": 0,
+    "react/jsx-fragments": 0,
+    "react/require-default-props": 0,
+    "react-hooks/exhaustive-deps": 0,
+    "react/jsx-curly-spacing": [
+      "warn",
+      {
+        "when": "always",
+        "children": {
+          "when": "always"
+        }
+      }
+    ],
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+
+    // # JSX A11Y
+
+    "jsx-a11y/click-events-have-key-events": 0,
+    "jsx-a11y/no-static-element-interactions": 0,
+
+    // # TypeScript
+
+    "@typescript-eslint/semi": [
+      2,
+      "never"
+    ],
+    "@typescript-eslint/comma-dangle": [
+      2,
+      "never"
+    ],
+
+    // # Imports
+
+    "import/prefer-default-export": 0,
+    "simple-import-sort/exports": "error",
+    "simple-import-sort/imports": [
+      "error",
+      {
+        "groups": [
+          ["^.+\\.?(main.scss)$"],
+          ["^react"],
+          ["^@?\\w"],
+          ["^\\u0000"],
+          ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+          ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+          ["^(@models)(/.*|$)"],
+          ["^(@constants)(/.*|$)"],
+          ["^(@utils)(/.*|$)"],
+          ["^(@hooks)(/.*|$)"],
+          ["^(@components)(/.*|$)"],
+          ["^(@services)(/.*|$)"],
+          ["^(@store)(/.*|$)"],
+          ["^(@interfaces)(/.*|$)"],
+          ["^.+\\.?(.scss)$"]
+        ]
+      }
+    ],
+
+    // # Other
+
+    "no-underscore-dangle": 0,
+    "jsx-quotes": [
+      "error",
+      "prefer-single"
+    ],
+    "array-bracket-spacing": [
+      "error",
+      "always"
+    ],
+    "max-len": [
+      2,
+      1050
+    ],
+    "indent": ["error", 2]
+  }
+}
