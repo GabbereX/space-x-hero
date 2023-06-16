@@ -1,0 +1,15 @@
+@include addFont(Museo Sans Cyrl, 100, museo-sans-cyrl-100, 100, normal);
+@include addFont(Museo Sans Cyrl, 300, museo-sans-cyrl-300, 300, normal);
+@include addFont(Museo Sans Cyrl, 700, museo-sans-cyrl-700, 700, normal);
+
+body {
+  font-family: 'Museo Sans Cyrl', -apple-system, BlinkMacSystemFont, Segoe UI, Fira Sans, Helvetica Neue, Arial, sans-serif;
+  font-size: var(--font-size-default);
+  line-height: var(--line-height-default);
+  color: var(--white);
+}
+
+button, input {
+  font: inherit;
+}
+
