@@ -55,6 +55,41 @@
   }
 }
 
+.nav-list {
+  display: flex;
+
+  & > li:not(:last-child) {
+    margin-right: 40px;
+  }
+}
+
+.link {
+  &-style-1 {
+    position: relative;
+    transition: color var(--transition-duration-normal) ease;
+
+    &:after {
+      content: '';
+      position: absolute;
+      right: 0;
+      bottom: -4px;
+      height: 1px;
+      width: 0;
+      background: var(--gray-100);
+      transition: width var(--transition-duration-normal) ease;
+    }
+
+    &:hover:after {
+      width: 100%;
+      left: 0;
+    }
+
+    &:hover {
+      color: var(--gray-100);
+    }
+  }
+}
+
 .hero {
   padding-top: var(--spacing-header-height);
 }
