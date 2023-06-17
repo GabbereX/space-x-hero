@@ -12,6 +12,8 @@ const root = ReactDOM.createRoot(
 root.render(
   <StrictMode>
     <Header />
-    <Hero />
+    <main>
+      <Hero />
+    </main>
   </StrictMode>
 )

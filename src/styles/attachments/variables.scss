@@ -2,11 +2,27 @@
   // colors
   --white: #fff;
   --gray-100: #b1b1b1;
+  --gray-150-rgba: rgba(152, 147, 147, .21); // #989393
+  --blue-350: #398df5;
+  --blue-550: #23599c;
   --blue-900: #0b141d;
-  --orange-450: #d35718; // ?
+  --orange-300: #ee8521; // for logo
+  --orange-350: #d05217; // for logo
+  --orange-950-rgba: rgba(21, 10, 1, .21); // #150a01
   --transparent: transparent;
 
   // fonts
   --font-size-default: 1rem;
   --line-height-default: 1.375rem;
+
+  // spacing
+  --spacing-container-width: 73.125rem;
+  --spacing-container-padding-x: 6.25rem;
+  --spacing-header-height: 6.25rem;
+
+  // transition
+  --transition-duration-normal: .3s;
+
+  // filter
+  --light-1: drop-shadow(0 0 3px rgba(255, 255, 255, 1));
 }

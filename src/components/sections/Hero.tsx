@@ -1,8 +1,12 @@
 import { FC, ReactElement } from 'react'
 
+import Container from '@components/layout/Container'
+
 const Hero: FC = (): ReactElement => (
   <section>
-    Hero
+    <Container className='hero'>
+      Hero
+    </Container>
   </section>
 )
 

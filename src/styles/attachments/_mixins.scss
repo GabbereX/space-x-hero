@@ -13,3 +13,27 @@
     font-display: swap;
   }
 }
+
+@mixin fixWidth($value) {
+  width: $value;
+  max-width: $value;
+  min-width: $value;
+}
+
+@mixin fixHeight($value) {
+  height: $value;
+  max-height: $value;
+  min-height: $value;
+}
+
+@mixin cornerSize($value) {
+  background-size:
+    1px $value, // top left |
+    $value 1px, // top left --
+    1px $value, // bottom left |
+    $value 1px, // bottom bottom
+    1px $value, // bottom right
+    $value 1px, // top right --
+    1px $value, // top right |
+    $value 1px; // bottom left --
+}

@@ -1,0 +1,63 @@
+@import "./mixins";
+
+.full-hidden {
+  position: absolute;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+.corner-box {
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+
+    background-image:
+      linear-gradient(white, white),
+      linear-gradient(white, white),
+      linear-gradient(white, white),
+      linear-gradient(white, white),
+      linear-gradient(white, white),
+      linear-gradient(white, white),
+      linear-gradient(white, white),
+      linear-gradient(white, white);
+    background-position:
+      0 0,
+      0 0,
+      0 100%,
+      100% 100%,
+      100% 100%,
+      100% 0,
+      100% 0,
+      0 100%;
+    background-repeat: no-repeat;
+
+    transition: background-size var(--transition-duration-normal) ease;
+    transition-property: background-size, filter;
+    transition-duration: var(--transition-duration-normal);
+    transition-timing-function: ease;
+  }
+
+
+  &--large:after {
+    @include cornerSize(7px);
+  }
+
+  &--large:hover:after {
+    @include cornerSize(14px);
+    filter: var(--light-1);
+  }
+
+  &--small:after {
+    @include cornerSize(5px);
+  }
+
+  &--small:hover:after {
+    @include cornerSize(10px);
+  }
+}
