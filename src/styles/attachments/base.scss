@@ -2,4 +2,20 @@ body {
   min-height: 100svh;
   min-height: 100vh;
   background-color: var(--blue-900);
+  background-image: url(../../../public/assets/images/hero/texture.webp);
+}
+
+h1, h4 {
+  line-height: 120%;
+}
+
+h1 {
+  font-size: 3.625rem;
+  font-weight: 700;
+
+}
+
+h4 {
+  font-size: 1.5625rem;
+  font-weight: 300;
 }
