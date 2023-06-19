@@ -12,8 +12,8 @@ const Logo: FC = (): ReactElement => {
       y2='0'
       gradientUnits='userSpaceOnUse'
     >
-      <stop offset='0' stopColor='var(--orange-350)' />
-      <stop offset='1' stopColor='var(--orange-300)' />
+      <stop offset='0' stopColor='var(--amber-700)' />
+      <stop offset='1' stopColor='var(--amber-600)' />
     </linearGradient>
   )
 

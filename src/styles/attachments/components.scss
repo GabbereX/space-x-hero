@@ -92,7 +92,6 @@
 }
 
 .hero {
-  position: relative;
   min-height: 41.25rem;
 
   &:after, &:before {
@@ -103,12 +102,13 @@
     left: 0;
     top: 0;
     background-repeat: no-repeat;
-    background-position: center center;
+
   }
 
   &:before {
     background-image:
-            url(../../../public/assets/images/hero/background.webp);
+            url(../../../public/assets/images/hero/background-2.webp);
+    background-position: calc(50% - 57px), center;
     z-index: -2;
   }
 
@@ -116,6 +116,7 @@
     background-image:
             url(../../../public/assets/images/hero/mask.webp);
     background-size: 100% auto;
+    background-position: center center;
     z-index: -1;
   }
 
@@ -131,14 +132,40 @@
 
   &-content {
     color: var(--transparent);
-    background-image:
-            linear-gradient(-90deg,
-                    rgba(255,63,4,1) 65%,
-                    rgba(255,255,255,1) 90%,
-                    rgba(255,255,255,1) 100%);
+    background-image: linear-gradient(
+      -90deg,
+      var(--orange-600) 65%,
+      white 90%
+    );
     background-repeat: no-repeat;
     //background-attachment: fixed;
     background-size: cover;
     background-clip: text;
+
+    mask-image: radial-gradient(
+      ellipse var(--spacing-planet-size) var(--spacing-planet-size) at
+      calc(var(--spacing-planet-size) / 2 + var(--position-planet-mask-x))
+      calc(var(--spacing-planet-size) / 2 + var(--position-planet-mask-y)),
+      transparent 50%, white 50.5%
+    );
+    mask-repeat: no-repeat;
   }
+}
+
+.planet-imitation {
+  position: absolute;
+  left: calc(50% - 50px);
+  top: 138px;
+  width: var(--spacing-planet-size);
+  height: var(--spacing-planet-size);
+  border-radius: 100%;
+  opacity: 0.5;
+  transform: translateX(calc(-50% + 50px / 2));
+}
+
+.canvas {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
