@@ -26,14 +26,27 @@
   min-height: $value;
 }
 
-@mixin cornerSize($value) {
-  background-size:
-    1px $value, // top left |
-    $value 1px, // top left --
-    1px $value, // bottom left |
-    $value 1px, // bottom bottom
-    1px $value, // bottom right
-    $value 1px, // top right --
-    1px $value, // top right |
-    $value 1px; // bottom left --
+@mixin cornerSize($value, $isFull: true) {
+  @if $isFull == true {
+    background-size:
+      1px $value, // top left |
+      $value 1px, // top left --
+      1px $value, // bottom left |
+      $value 1px, // bottom right --
+      1px $value, // bottom right |
+      $value 1px, // top right --
+      1px $value, // top right |
+      $value 1px; // bottom left --
+  } @else {
+      background-size:
+        0 0, // top left |
+        0 0, // top left --
+        1px $value, // bottom left |
+        0 0, // bottom right --
+        0 0, // bottom right |
+        $value 1px, // top right --
+        1px $value, // top right |
+        $value 1px; // bottom left --
+  }
+
 }

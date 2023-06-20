@@ -4,6 +4,7 @@ import {
 
 import { changePlanetMaskParams } from '@utils/elements.utils'
 
+import Button from '@components/elements/Button'
 import Container from '@components/layout/Container'
 
 const Hero: FC = (): ReactElement => {
@@ -58,6 +59,9 @@ const Hero: FC = (): ReactElement => {
             на красную планету
           </h4>
         </div>
+        <Button>
+          Начать путешествие
+        </Button>
       </Container>
     </section>
   )

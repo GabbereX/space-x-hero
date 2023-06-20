@@ -17,6 +17,7 @@
 
 .corner-box {
   position: relative;
+
   &:after {
     content: '';
     position: absolute;
@@ -51,22 +52,51 @@
     transition-timing-function: ease;
   }
 
-
   &--large:after {
     @include cornerSize(7px);
   }
 
   &--large:hover:after {
-    @include cornerSize(14px);
+    @include cornerSize(21px);
     filter: var(--light-1);
   }
 
   &--small:after {
-    @include cornerSize(5px);
+    filter: var(--light-2);
+    @include cornerSize(5px, false);
   }
 
   &--small:hover:after {
-    @include cornerSize(10px);
+    filter: var(--light-3);
+    @include cornerSize(100%, false);
   }
 }
 
+.button {
+  padding: 0.625rem 1.5rem;
+  font-size: 0.875rem;
+  background-color: var(--blue-950-rgba-5);
+  border: 1px solid var(--gray-990);
+  border-image: linear-gradient(
+    190deg,
+    var(--blue-600) 30%,
+    var(--blue-800) 40%,
+    var(--blue-850) 55%,
+    var(--blue-550) 85%) 2;
+
+  transition-property: background-color, filter, color, text-shadow;
+  transition-duration: var(--transition-duration-normal);
+  transition-timing-function: ease;
+
+  &:hover {
+    background-color: var(--blue-950-rgba-10);
+    filter: var(--light-3);
+    //color: rgba(0, 255, 255, 1);
+    text-shadow: 0 0 7px rgba(0, 255, 255, 1);
+    //border-color: var(--blue-550);
+    //border-image: linear-gradient(
+    //                190deg,
+    //                var(--blue-550) 100%,
+    //                var(--blue-550) 100%) 2;
+  }
+}

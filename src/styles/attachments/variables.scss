@@ -2,14 +2,20 @@
   // colors
   --white: #fff;
   --gray-100: #b1b1b1;
-  --gray-150-rgba: rgba(152, 147, 147, .21); // #989393
+  --gray-150-rgba: rgba(152, 147, 147, .21);
+  --gray-990: #0e0d16;
   --blue-350: #398df5;
   --blue-550: #23599c;
+  --blue-600: #263e66;
+  --blue-800: #09213d;
+  --blue-850: #111f2d;
   --blue-900: #0b141d;
+  --blue-950-rgba-5: rgba(22, 21, 29, .5);
+  --blue-950-rgba-10: rgba(22, 21, 29, 1);
   --orange-600: #ff3f04;
   --amber-600: #ee8521; // for logo
   --amber-700: #d05217; // for logo
-  --orange-950-rgba: rgba(21, 10, 1, .21); // #150a01
+  --orange-950-rgba: rgba(21, 10, 1, .21);
   --transparent: transparent;
 
   // fonts
@@ -31,4 +37,9 @@
 
   // filter
   --light-1: drop-shadow(0 0 3px rgba(255, 255, 255, 1));
+  --light-2:
+          drop-shadow(0 0 1px rgba(255, 255, 255, 1))
+          drop-shadow(0 0 3px rgba(255, 255, 255, 0.7))
+          drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+  --light-3: drop-shadow(0 0 1px rgba(0, 255, 255, 1));
 }
