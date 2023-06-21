@@ -120,6 +120,7 @@
   }
 
   .container {
+    height: 100%;
     padding-top: var(--spacing-header-height);
     z-index: 2;
   }
@@ -138,7 +139,6 @@
       white 90%
     );
     background-repeat: no-repeat;
-    //background-attachment: fixed;
     background-size: cover;
     background-clip: text;
 
@@ -167,6 +167,4 @@
 .canvas {
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
 }

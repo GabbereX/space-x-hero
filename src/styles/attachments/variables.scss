@@ -38,8 +38,10 @@
   // filter
   --light-1: drop-shadow(0 0 3px rgba(255, 255, 255, 1));
   --light-2:
-          drop-shadow(0 0 1px rgba(255, 255, 255, 1))
-          drop-shadow(0 0 3px rgba(255, 255, 255, 0.7))
-          drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
-  --light-3: drop-shadow(0 0 1px rgba(0, 255, 255, 1));
+    drop-shadow(0 0 1px rgba(255, 255, 255, 1))
+    drop-shadow(0 0 3px rgba(255, 255, 255, 0.7))
+    drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+  --light-3:
+    drop-shadow(0 0 1px rgba(0, 255, 255, 1))
+    drop-shadow(0 0 5px rgba(0, 255, 255, 0.5));
 }

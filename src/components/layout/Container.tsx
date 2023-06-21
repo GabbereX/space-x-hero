@@ -1,18 +1,20 @@
-import { FC, ReactElement } from 'react'
+import {
+  DetailedHTMLProps, FC, HTMLAttributes, ReactElement
+} from 'react'
 
 import clsx from 'clsx'
 
-import { IPropsWithChildren } from '@interfaces/common.types'
+type TProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
 
-interface IProps extends IPropsWithChildren {
-  className?: string
-}
-
-const Container: FC<IProps> = ({
+const Container: FC<TProps> = ({
   children,
-  className
+  className,
+  ...rest
 }): ReactElement => (
-  <div className={ clsx('container', className) }>
+  <div
+    className={ clsx('container', className) }
+    { ...rest }
+  >
     { children }
   </div>
 )

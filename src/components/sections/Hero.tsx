@@ -1,65 +1,97 @@
 import {
-  FC, ReactElement, useEffect, useRef
+  FC, ReactElement, useEffect, useRef, useState
 } from 'react'
 
-import { changePlanetMaskParams } from '@utils/elements.utils'
+import { renderLineCanvas, updatePlanetMaskParams } from '@utils/elements.utils'
 
 import Button from '@components/elements/Button'
 import Container from '@components/layout/Container'
 
+import { ElementsSize } from '@interfaces/elements.types'
+
 const Hero: FC = (): ReactElement => {
+  const [ sizeCanvas, setSizeCanvas ] = useState<ElementsSize>({
+    width: 0,
+    height: 0
+  })
+
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const contentWrapperRef = useRef<HTMLDivElement>(null)
-  const planetImmitationRef = useRef<HTMLDivElement>(null)
+  const contentRef = useRef<HTMLDivElement>(null)
+  const planetRef = useRef<HTMLDivElement>(null)
+  const sectionRef = useRef<HTMLElement>(null)
+  const buttonRef = useRef<HTMLButtonElement>(null)
 
   useEffect(() => {
-    const contentWrapper = contentWrapperRef.current
-    const planetImmitation = planetImmitationRef.current
+    const content = contentRef.current
+    const planet = planetRef.current
+    const container = sectionRef.current
 
-    const setPlanetMaskParams = changePlanetMaskParams(
-      contentWrapper,
-      planetImmitation
-    )
+    const isElementsPresent = content && planet && container
 
-    setPlanetMaskParams()
-    window.onresize = () => setPlanetMaskParams()
+    if (isElementsPresent) {
+      const updateParams = (): void => {
+        const { width, height } = container.getBoundingClientRect()
 
-    const canvas = canvasRef.current
-    const context = canvas?.getContext('2d')
+        setSizeCanvas({
+          width: Math.round(width),
+          height: Math.round(height)
+        })
 
-    if (context) {
-      // console.log(context.lineWidth)
-      //
-      // context.beginPath()
-      // context.moveTo(0, 0)
-      // context.lineTo(500, 500)
-      // context.stroke()
+        updatePlanetMaskParams(
+          content,
+          planet
+        )
+      }
+
+      updateParams()
+      window.onresize = () => updateParams()
     }
   }, [])
 
+  useEffect(() => {
+    const canvas = canvasRef.current
+    const context = canvas?.getContext('2d')
+    const { width, height } = sizeCanvas
+
+    const button = buttonRef.current
+    const planet = planetRef.current
+
+    const isElementsPresent = canvas && context && button && planet
+
+    if (isElementsPresent) {
+      canvas.width = width
+      canvas.height = height
+
+      renderLineCanvas(
+        context,
+        button,
+        planet
+      )
+    }
+  }, [ sizeCanvas ])
+
   return (
-    <section className='hero relative'>
+    <section
+      ref={ sectionRef }
+      className='hero relative'
+    >
       <Container>
         <canvas
           ref={ canvasRef }
           className='canvas absolute'
         />
         <div
-          ref={ planetImmitationRef }
+          ref={ planetRef }
           className='planet-imitation'
         />
         <div
-          ref={ contentWrapperRef }
+          ref={ contentRef }
           className='hero-content'
         >
-          <h1>
-            Путешествие
-          </h1>
-          <h4>
-            на красную планету
-          </h4>
+          <h1>Путешествие</h1>
+          <h4>на красную планету</h4>
         </div>
-        <Button>
+        <Button ref={ buttonRef }>
           Начать путешествие
         </Button>
       </Container>

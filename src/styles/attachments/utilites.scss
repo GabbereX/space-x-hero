@@ -84,19 +84,13 @@
     var(--blue-850) 55%,
     var(--blue-550) 85%) 2;
 
-  transition-property: background-color, filter, color, text-shadow;
+  transition-property: background-color, filter, text-shadow;
   transition-duration: var(--transition-duration-normal);
   transition-timing-function: ease;
 
   &:hover {
     background-color: var(--blue-950-rgba-10);
     filter: var(--light-3);
-    //color: rgba(0, 255, 255, 1);
     text-shadow: 0 0 7px rgba(0, 255, 255, 1);
-    //border-color: var(--blue-550);
-    //border-image: linear-gradient(
-    //                190deg,
-    //                var(--blue-550) 100%,
-    //                var(--blue-550) 100%) 2;
   }
 }
