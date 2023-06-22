@@ -48,5 +48,11 @@
         1px $value, // top right |
         $value 1px; // bottom left --
   }
+}
 
+@mixin benefitsCardMaskAngle($value) {
+  mask-image: linear-gradient(
+    $value,
+    var(--benefits-card-mask-params)
+  );
 }

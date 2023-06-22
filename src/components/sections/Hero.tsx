@@ -6,20 +6,21 @@ import { renderLineCanvas, updatePlanetMaskParams } from '@utils/elements.utils'
 
 import Button from '@components/elements/Button'
 import Container from '@components/layout/Container'
+import Benefits from '@components/views/Benefits'
 
 import { ElementsSize } from '@interfaces/elements.types'
 
 const Hero: FC = (): ReactElement => {
-  const [ sizeCanvas, setSizeCanvas ] = useState<ElementsSize>({
-    width: 0,
-    height: 0
-  })
-
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const contentRef = useRef<HTMLDivElement>(null)
   const planetRef = useRef<HTMLDivElement>(null)
   const sectionRef = useRef<HTMLElement>(null)
   const buttonRef = useRef<HTMLButtonElement>(null)
+
+  const [ sizeCanvas, setSizeCanvas ] = useState<ElementsSize>({
+    width: 0,
+    height: 0
+  })
 
   useEffect(() => {
     const content = contentRef.current
@@ -71,29 +72,20 @@ const Hero: FC = (): ReactElement => {
   }, [ sizeCanvas ])
 
   return (
-    <section
-      ref={ sectionRef }
-      className='hero relative'
-    >
+    <section ref={ sectionRef } className='hero relative'>
       <Container>
-        <canvas
-          ref={ canvasRef }
-          className='canvas absolute'
-        />
-        <div
-          ref={ planetRef }
-          className='planet-imitation'
-        />
-        <div
-          ref={ contentRef }
-          className='hero-content'
-        >
-          <h1>Путешествие</h1>
-          <h4>на красную планету</h4>
+        <div>
+          <canvas ref={ canvasRef } className='canvas absolute' />
+          <div ref={ planetRef } className='planet-imitation' />
+          <div ref={ contentRef } className='hero-content'>
+            <h1>Путешествие</h1>
+            <h4>на красную планету</h4>
+          </div>
+          <Button ref={ buttonRef }>
+            Начать путешествие
+          </Button>
         </div>
-        <Button ref={ buttonRef }>
-          Начать путешествие
-        </Button>
+        <Benefits />
       </Container>
     </section>
   )

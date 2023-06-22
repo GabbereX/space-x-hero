@@ -92,7 +92,7 @@
 }
 
 .hero {
-  min-height: 41.25rem;
+  min-height: var(--spacing-hero-height);
 
   &:after, &:before {
     content: '';
@@ -120,6 +120,7 @@
   }
 
   .container {
+    display: flex;
     height: 100%;
     padding-top: var(--spacing-header-height);
     z-index: 2;
@@ -132,14 +133,13 @@
 
   &-content {
     margin-bottom: 5.625rem;
+    min-width: 26.875rem;
     color: var(--transparent);
     background-image: linear-gradient(
       -90deg,
-      var(--orange-600) 65%,
+      var(--orange-600) 0%,
       white 90%
     );
-    background-repeat: no-repeat;
-    background-size: cover;
     background-clip: text;
 
     mask-image: radial-gradient(
@@ -162,6 +162,97 @@
   border-radius: 100%;
   opacity: 0.5;
   transform: translateX(calc(-50% + 50px / 2));
+}
+
+.benefits {
+  width: 21.625rem;
+  min-height: calc(var(--spacing-hero-height) - var(--spacing-header-height));
+  margin-left: auto;
+
+  &-list, &-background {
+    display: grid;
+    grid-template-columns: repeat(2, var(--spacing-benefits-card-size));
+    grid-template-rows: repeat(2, var(--spacing-benefits-card-size));
+    gap: 0.625rem;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding-top: 2.375rem;
+  }
+
+  &-list {
+    color: transparent;
+    font-weight: 100;
+
+    background-image: linear-gradient(
+      -90deg,
+      var(--gray-110) 0%,
+      white 100%
+    );
+    background-clip: text;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  &-background {
+    > div {
+      background-color: rgba(255, 255, 255, .2);
+      border: 1px solid transparent;
+      opacity: .1;
+
+      transition-property: opacity, border-color;
+      transition-duration: var(--transition-duration-normal);
+      transition-timing-function: ease;
+
+      &:nth-child(4n+1) {
+        @include benefitsCardMaskAngle(135deg);
+      }
+
+      &:nth-child(4n+2) {
+        @include benefitsCardMaskAngle(-135deg);
+      }
+
+      &:nth-child(4n+3) {
+        @include benefitsCardMaskAngle(45deg);
+      }
+
+      &:nth-child(4n+4) {
+        @include benefitsCardMaskAngle(-45deg);
+      }
+
+      &:hover {
+        opacity: .5;
+        border-color: white;
+      }
+    }
+  }
+
+  &-item, &-background > div {
+    width: var(--spacing-benefits-card-size);
+    height: var(--spacing-benefits-card-size);
+  }
+
+  &-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-content {
+    &--upper {
+      margin-bottom: 1.25rem;
+    }
+    &--central {
+      font-size: 3.625rem;
+      font-weight: 700;
+      line-height: 100%;
+    }
+    &--lower {
+
+    }
+  }
 }
 
 .canvas {

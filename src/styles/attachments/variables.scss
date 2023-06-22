@@ -2,6 +2,7 @@
   // colors
   --white: #fff;
   --gray-100: #b1b1b1;
+  --gray-110: #a1a1a1;
   --gray-150-rgba: rgba(152, 147, 147, .21);
   --gray-990: #0e0d16;
   --blue-350: #398df5;
@@ -26,7 +27,9 @@
   --spacing-container-width: 73.125rem;
   --spacing-container-padding-x: 6.25rem;
   --spacing-header-height: 6.25rem;
+  --spacing-hero-height: 41.25rem;
   --spacing-planet-size: 385px;
+  --spacing-benefits-card-size: 11.5625rem;
 
   // position
   --position-planet-mask-x: 0px;
@@ -44,4 +47,7 @@
   --light-3:
     drop-shadow(0 0 1px rgba(0, 255, 255, 1))
     drop-shadow(0 0 5px rgba(0, 255, 255, 0.5));
+
+  // linear gradient
+  --benefits-card-mask-params: transparent 50%, rgba(255, 255, 255, 1) 100%;
 }

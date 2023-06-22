@@ -1,6 +1,6 @@
 import { FC, ReactElement } from 'react'
 
-import { mainMenuLinks } from '@const/localData'
+import { mainMenuLinks } from '@const/localData.const'
 
 const Nav: FC = (): ReactElement => (
   <nav>
