@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/space-x-hero/static/css/main.76b381c7.css",
+    "main.js": "/space-x-hero/static/js/main.99f3f0fe.js",
+    "static/media/mask.webp": "/space-x-hero/static/media/mask.d437ff2b01ab96ea19aa.webp",
+    "static/media/background.webp": "/space-x-hero/static/media/background.e2d33b863d2cc5bdfe50.webp",
+    "static/media/museo-sans-cyrl-300.woff": "/space-x-hero/static/media/museo-sans-cyrl-300.02669d558e53ff5181ca.woff",
+    "static/media/museo-sans-cyrl-700.woff": "/space-x-hero/static/media/museo-sans-cyrl-700.976b916c5cd1396e81f4.woff",
+    "static/media/museo-sans-cyrl-100.woff": "/space-x-hero/static/media/museo-sans-cyrl-100.a2bc72b55322dc361377.woff",
+    "static/media/museo-sans-cyrl-300.woff2": "/space-x-hero/static/media/museo-sans-cyrl-300.92d087ba7a2cc7019526.woff2",
+    "static/media/museo-sans-cyrl-700.woff2": "/space-x-hero/static/media/museo-sans-cyrl-700.72c800e5d42e517f20f6.woff2",
+    "static/media/museo-sans-cyrl-100.woff2": "/space-x-hero/static/media/museo-sans-cyrl-100.e57ffc0e1e4448703a6b.woff2",
+    "index.html": "/space-x-hero/index.html",
+    "static/media/texture.webp": "/space-x-hero/static/media/texture.bcf81df2468d02c03b6f.webp",
+    "main.76b381c7.css.map": "/space-x-hero/static/css/main.76b381c7.css.map",
+    "main.99f3f0fe.js.map": "/space-x-hero/static/js/main.99f3f0fe.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.76b381c7.css",
+    "static/js/main.99f3f0fe.js"
+  ]
+}
