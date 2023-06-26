@@ -21,7 +21,7 @@ const Sprite: FC<IProps> = ({
     height={ size[1] }
   >
     { linearGradient }
-    <use xlinkHref={ `/assets/sprites/${fileName}.svg#${svgId}` } />
+    <use xlinkHref={ `${window.location.href || ''}/assets/sprites/${fileName}.svg#${svgId}` } />
   </svg>
 )
 
