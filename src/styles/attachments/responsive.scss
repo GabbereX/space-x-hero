@@ -1,0 +1,252 @@
+@media (max-width: 1536px) {
+
+}
+
+@media (max-width: 1279px) {
+  :root {
+    --spacing-container-padding-x: 3.125rem;
+    --spacing-benefits-card-size: 7.8125rem;
+  }
+
+  .logo {
+    &-svg {
+      width: 12.5rem;
+    }
+  }
+
+  .nav-list {
+    & > li:not(:last-child) {
+      margin-right: 1.5rem;
+    }
+  }
+
+  .hero {
+    &:after {
+      background-size: cover;
+    }
+  }
+
+  .hero {
+    &:before {
+      background-size: auto 100%;
+    }
+  }
+
+  .benefits {
+    margin-right: -0.9375rem;
+    &-list, &-background {
+      justify-content: end;
+      align-items: center;
+      padding-top: 6.25rem;
+    }
+
+    &-content {
+      &--central {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .logo {
+    &-svg {
+      width: auto;
+    }
+  }
+
+  .nav {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100svh;
+    height: 100vh;
+    width: 35%;
+    transform: translateX(0);
+    transition: transform var(--transition-duration-normal) ease;
+
+    &-wrapper {
+      position: relative;
+    }
+
+    &-close-button {
+      display: initial;
+      position: absolute;
+      left: 50%;
+      top: calc(var(--spacing-header-height) / 2);
+    }
+
+    &-wrapper, &-list {
+      width: 100%;
+      height: 100%;
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      background: var(--blue-900);
+
+      & > li {
+        font-size: 22px;
+
+        &:not(:last-child) {
+          margin-right: 0;
+          margin-bottom: 1.5rem;
+        }
+      }
+    }
+
+    &-hidden {
+      transform: translateX(1000px);
+    }
+  }
+
+  .burger {
+    display: initial;
+  }
+
+  * {
+    --spacing-hero-height: 400px;
+    --spacing-planet-size: 174px;
+  }
+
+  .hero {
+    &:before {
+      background-position: calc(50% - 15px) bottom;
+      background-size: auto calc(100% - var(--spacing-header-height));
+    }
+
+    &-content {
+      padding-top: 20px;
+      margin-bottom: 3rem;
+    }
+
+    h1 {
+      font-size: 2.625rem;
+    }
+
+    h4 {
+      font-size: 1.2rem;
+    }
+  }
+
+  .planet-imitation {
+    top: 164px;
+  }
+
+  .benefits {
+    &-list, &-background {
+      padding-top: 20px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  * {
+    --spacing-header-height: 3.125rem;
+    --spacing-hero-height: 350px;
+    --spacing-benefits-card-size: 6.25rem;
+    --spacing-container-padding-x: 1.5625rem;
+  }
+
+  .logo {
+    padding: 10px 5px 10px 10px;
+    svg {
+      height: 1.5625rem;
+    }
+  }
+
+  .planet-imitation {
+    top: 114px;
+  }
+
+  .benefits {
+    &-list, &-background {
+      padding-top: 50px;
+    }
+
+    &-item {
+      font-size: 0.875rem;
+    }
+
+  }
+}
+
+@media (max-width: 639px) {
+  * {
+    --spacing-container-padding-x: 10px;
+  }
+
+  .nav {
+    width: 100%;
+  }
+
+  .hero {
+    &:before {
+      background-position: calc(50% - 15px) 70px;
+    }
+
+    &-content {
+      position: absolute;
+      padding-top: var(--spacing-header-height);
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+
+      & > h1 {
+        padding-top: 0.3125rem;
+      }
+    }
+
+    &-button {
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+  }
+
+  .benefits {
+    width: 100%;
+    height: 100%;
+    margin-right: 0;
+    &-list, &-background {
+      padding: 0.625rem ;
+      justify-content: space-between;
+      align-content: end;
+    }
+  }
+
+  .planet-imitation {
+    top: 133px;
+  }
+}
+
+@media (max-width: 419px) {
+  * {
+    --spacing-benefits-card-size: 11.5625rem;
+  }
+
+  .benefits {
+    top: calc(var(--spacing-hero-height) - var(--spacing-header-height));
+
+    &-list, &-background {
+      grid-template-columns: repeat(2, minmax(100px, var(--spacing-benefits-card-size)));
+      grid-template-rows: repeat(2, minmax(100px, var(--spacing-benefits-card-size)));
+      height: auto;
+      width: auto;
+      align-content: start;
+      padding: 10px 0;
+    }
+
+    &-item, &-background > div {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}

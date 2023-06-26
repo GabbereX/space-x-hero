@@ -1,3 +1,10 @@
+export const getScrollTop = (): number => (
+  window.scrollY
+    || document.documentElement.scrollTop
+    || document.body.scrollTop
+    || 0
+)
+
 const setPlanetPosition = (axis: 'x' | 'y', value: number): void => (
   document.documentElement.style
     .setProperty(`--position-planet-mask-${axis}`, `${value}px`))
@@ -31,6 +38,7 @@ export const renderLineCanvas = (
   const END_POSITION_BOTTOM_PERCENT = 18
   const FIRST_LINE_WIDTH_PERCENT = 25
   const ARC_RADIUS = 2
+  const scrollTop = Math.round(getScrollTop())
 
   // 1. position button
 
@@ -41,7 +49,7 @@ export const renderLineCanvas = (
   } = button.getBoundingClientRect()
 
   const startPositionX = Math.round(buttonRight)
-  const startPositionY = Math.round(buttonTop) + buttonHeight / 2
+  const startPositionY = Math.round(buttonTop) + buttonHeight / 2 + scrollTop
 
   // 2. position rocket in planet
 
@@ -55,7 +63,7 @@ export const renderLineCanvas = (
   const endPositionX = Math.round(planetLeft)
       + Math.round(planetWidth / 2)
   const endPositionY = Math.round(planetBottom)
-      - Math.round((END_POSITION_BOTTOM_PERCENT / 100) * planetHeight)
+      - Math.round((END_POSITION_BOTTOM_PERCENT / 100) * planetHeight) + scrollTop
 
   // 3. width line
 

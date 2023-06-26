@@ -4,9 +4,9 @@ import {
 
 import { renderLineCanvas, updatePlanetMaskParams } from '@utils/elements.utils'
 
+import Benefits from '@components/blocks/Benefits'
 import Button from '@components/elements/Button'
 import Container from '@components/layout/Container'
-import Benefits from '@components/views/Benefits'
 
 import { ElementsSize } from '@interfaces/elements.types'
 
@@ -76,14 +76,16 @@ const Hero: FC = (): ReactElement => {
       <Container>
         <div>
           <canvas ref={ canvasRef } className='canvas absolute' />
-          <div ref={ planetRef } className='planet-imitation' />
+          <div ref={ planetRef } className='planet-imitation absolute' />
           <div ref={ contentRef } className='hero-content'>
             <h1>Путешествие</h1>
             <h4>на красную планету</h4>
           </div>
-          <Button ref={ buttonRef }>
-            Начать путешествие
-          </Button>
+          <div className='hero-button'>
+            <Button ref={ buttonRef }>
+              Начать путешествие
+            </Button>
+          </div>
         </div>
         <Benefits />
       </Container>

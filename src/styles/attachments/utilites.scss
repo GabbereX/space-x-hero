@@ -15,6 +15,14 @@
   position: relative;
 }
 
+.d-none {
+  display: none;
+}
+
+.backdrop-blur {
+  backdrop-filter: blur(25px)
+}
+
 .corner-box {
   position: relative;
 
@@ -93,5 +101,23 @@
     background-color: var(--blue-950-rgba-10);
     filter: var(--light-3);
     text-shadow: 0 0 7px rgba(0, 255, 255, 1);
+  }
+}
+
+.svg {
+  &-standard {
+    fill: var(--white);
+    transition: fill var(--transition-duration-normal) ease;
+
+    &:hover, &:active {
+      fill: var(--amber-600);
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .button {
+    padding: 0.3125rem 0.9375rem;
+    font-size: 0.75rem;
   }
 }

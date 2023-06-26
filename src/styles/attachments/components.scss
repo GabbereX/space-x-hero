@@ -14,6 +14,7 @@
   @include fixHeight(var(--spacing-header-height));
   background-color: var(--orange-950-rgba);
   border: 1px solid var(--gray-150-rgba);
+  transition: backdrop-filter var(--transition-duration-normal) ease;
   z-index: 100;
 
   & > .container {
@@ -38,13 +39,11 @@
     }
 
     & stop {
-      transition: stop-color var(--transition-duration-normal) ease;
+      transition: stop-color var(--transition-duration-slow) ease;
     }
   }
 
   &:hover &-svg {
-    filter: var(--light-1);
-
     stop {
       &:nth-child(1) {
         stop-color: var(--blue-550);
@@ -101,13 +100,14 @@
     height: 100%;
     left: 0;
     top: 0;
-    background-repeat: no-repeat;
   }
 
   &:before {
     background-image:
-            url(../../../public/assets/images/hero/background.webp);
-    background-position: calc(50% - 57px), center;
+            url(../../../public/assets/images/hero/background.webp),
+            url(../../../public/assets/images/hero/texture.webp);
+    background-position: calc(50% - 32px), center;
+    background-repeat: no-repeat, repeat;
     z-index: -2;
   }
 
@@ -116,6 +116,7 @@
             url(../../../public/assets/images/hero/mask.webp);
     background-size: 100% auto;
     background-position: center center;
+    background-repeat: no-repeat;
     z-index: -1;
   }
 
@@ -127,13 +128,13 @@
   }
 
   h1 {
-    padding-top: 4.0625rem;
+    font-size: clamp(1.625rem, 4vw, 3.625rem);
     text-transform: uppercase;
   }
 
   &-content {
+    padding-top: 6.25rem;
     margin-bottom: 5.625rem;
-    min-width: 26.875rem;
     color: var(--transparent);
     background-image: linear-gradient(
       -90deg,
@@ -154,14 +155,13 @@
 }
 
 .planet-imitation {
-  position: absolute;
-  left: calc(50% - 50px);
+  left: 50%;
   top: 138px;
   width: var(--spacing-planet-size);
   height: var(--spacing-planet-size);
   border-radius: 100%;
   opacity: 0.5;
-  transform: translateX(calc(-50% + 50px / 2));
+  transform: translateX(-50%);
 }
 
 .benefits {
@@ -174,11 +174,11 @@
     grid-template-columns: repeat(2, var(--spacing-benefits-card-size));
     grid-template-rows: repeat(2, var(--spacing-benefits-card-size));
     gap: 0.625rem;
-    width: 100%;
-    height: 100%;
     top: 0;
     left: 0;
     padding-top: 2.375rem;
+    width: 100%;
+    height: 100%;
   }
 
   &-list {
@@ -241,16 +241,11 @@
   }
 
   &-content {
-    &--upper {
-      margin-bottom: 1.25rem;
-    }
     &--central {
+      padding-top: 1.25rem;
       font-size: 3.625rem;
       font-weight: 700;
       line-height: 100%;
-    }
-    &--lower {
-
     }
   }
 }
